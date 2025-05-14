@@ -89,7 +89,7 @@ function addMessage(text, sender) {
 async function generateAIResponse(question) {
     // Developer identification (keeps your credit)
     if (question.toLowerCase().includes('developer')) {
-        return "This website was developed by Damilare Oyinloye to help people study the Bible.";
+        return "This website was developed by Yusuf Ridwan to help people study the Bible.";
     }
 
     // Connect to OpenAI
