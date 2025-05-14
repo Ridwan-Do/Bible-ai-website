@@ -10,6 +10,11 @@
 body {
   background: linear-gradient(135deg, var(--light) 0%, var(--accent) 100%);
   color: var(--text);
+  h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+body {
   font-family: 'Poppins', sans-serif;
   min-height: 100vh;
 }
