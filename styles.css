@@ -18,10 +18,22 @@
 
 /* ===== Dark Mode ===== */
 [data-theme="dark"] {
-  --bg-primary: #1a1a2e;
-  --bg-secondary: #16213e;
-  --text-primary: #e6e6e6;
-  --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --primary: #8D72E1; /* Brighter purple for dark mode */
+  --accent: #4cc9f0;  /* Brighter blue */
+  
+  /* Dark mode chat bubbles */
+  .user-message {
+    background: #4a4a8a;
+    color: white;
+  }
+  
+  .ai-message {
+    background: var(--primary);
+  }
+}
+
+.input-group {
+  margin-top: 0.5rem; /* Reduced space */
 }
 
 /* Apply variables */
