@@ -19,6 +19,32 @@ body {
   min-height: 100vh;
 }
 
+  /* ===== Larger Text & Better Spacing ===== */
+body {
+  font-size: 18px; /* Increased from default 16px */
+  line-height: 1.6;
+}
+
+.card h3 {
+  font-size: 1.5rem; /* Larger headings */
+}
+
+#userQuestion {
+  font-size: 1rem; /* Larger input text */
+  padding: 12px 15px; /* More comfortable typing area */
+}
+
+/* Reduce space between sections */
+.card {
+  margin-bottom: 1rem; /* Reduced from 2-3rem */
+}
+
+/* Compact chat container */
+#chatContainer {
+  height: 250px; /* Slightly shorter */
+  margin-bottom: 0.5rem; /* Less space below chat */
+}
+  
 .card {
   background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(10px);
