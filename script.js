@@ -1,3 +1,27 @@
+// ===== Theme Toggle =====
+const themeToggle = document.getElementById('themeToggle');
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+// Initialize theme
+if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && prefersDark)) {
+  document.documentElement.setAttribute('data-theme', 'dark');
+  themeToggle.textContent = '☀️ Toggle Light Mode';
+}
+
+// Toggle function
+themeToggle.addEventListener('click', () => {
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+  if (currentTheme === 'dark') {
+    document.documentElement.removeAttribute('data-theme');
+    themeToggle.textContent = '🌓 Toggle Dark Mode';
+    localStorage.setItem('theme', 'light');
+  } else {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    themeToggle.textContent = '☀️ Toggle Light Mode';
+    localStorage.setItem('theme', 'dark');
+  }
+});
+
 // Bible data structure
 const bibleData = {
     "Genesis": { chapters: 50, verses: {1: [31], 2: [25], /* ... */ } },
