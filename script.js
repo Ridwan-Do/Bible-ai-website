@@ -1,19 +1,8 @@
 // Bible data structure
 const bibleData = {
-    "Genesis": {
-        chapters: 50,
-        verses: {
-            1: [31, 25, 24, 26, 32, 22, 24, 22, 29, 32, 32, 20, 18, 24, 21, 16, 27, 33, 38, 18, 34, 24, 20, 67, 34, 35, 46, 22, 35, 43, 55, 32, 20, 31, 29, 43, 36, 30, 23, 23, 57, 38, 34, 34, 28, 34, 31, 22, 33, 26],
-        },
-        // Add more books and chapters as needed
-    },
-    "Exodus": {
-        chapters: 40,
-        verses: {
-            1: [22, 25, 22, 31, 23, 30, 25, 32, 35, 29, 10, 51, 22, 31, 27, 36, 16, 27, 25, 26, 36, 31, 33, 18, 40, 37, 21, 43, 46, 38, 18, 35, 23, 35, 35, 38, 29, 31, 43, 38],
-        },
-    },
-    // Add more books...
+    "Genesis": { chapters: 50, verses: {1: [31], 2: [25], /* ... */ } },
+    "Exodus": { chapters: 40, verses: {1: [22], /* ... */ } },
+    // Add all 66 books (find verse counts at https://www.owlcation.com/humanities/Bible-Book-Chapter-Verse-Counts)
 };
 
 // Initialize book dropdown
