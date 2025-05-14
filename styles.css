@@ -7,6 +7,34 @@
   --highlight: #FF9EAA; /* Soft pink */
 }
 
+/* ===== Light Mode (Default) ===== */
+:root {
+  --bg-primary: #f8f9fa;
+  --bg-secondary: #ffffff;
+  --text-primary: #2D2727;
+  --card-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+  /* Your existing colors... */
+}
+
+/* ===== Dark Mode ===== */
+[data-theme="dark"] {
+  --bg-primary: #1a1a2e;
+  --bg-secondary: #16213e;
+  --text-primary: #e6e6e6;
+  --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Apply variables */
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.card {
+  background: var(--bg-secondary);
+  box-shadow: var(--card-shadow);
+}
+
 body {
   background: linear-gradient(135deg, var(--light) 0%, var(--accent) 100%);
   color: var(--text);
