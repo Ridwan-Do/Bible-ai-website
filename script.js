@@ -54,18 +54,23 @@ document.getElementById('chapter').addEventListener('change', function() {
 });
 
 // Fetch verse when button is clicked
-document.getElementById('fetchVerse').addEventListener('click', function() {
+document.getElementById('fetchVerse').addEventListener('click', async function() {
     const book = bookSelect.value;
     const chapter = document.getElementById('chapter').value;
     const verse = document.getElementById('verse').value;
     
-    // In a real implementation, you would fetch from an API
-    // For now, we'll use a placeholder
-    document.getElementById('verseResult').innerHTML = `
-        <h5>${book} ${chapter}:${verse}</h5>
-        <p>This is where the verse text would appear. In a full implementation, 
-        you would connect to a Bible API like BibleGateway or ESV API.</p>
-    `;
+    try {
+        const response = await fetch(
+            `https://bible-api.com/${book}+${chapter}:${verse}?translation=kjv`
+        );
+        const data = await response.json();
+        document.getElementById('verseResult').innerHTML = `
+            <h5>${book} ${chapter}:${verse} (KJV)</h5>
+            <p>${data.text}</p>
+        `;
+    } catch (error) {
+        document.getElementById('verseResult').innerHTML = "Error fetching verse. Try again.";
+    }
 });
 
 // AI Chatbot functionality
