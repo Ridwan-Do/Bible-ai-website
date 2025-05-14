@@ -97,13 +97,34 @@ function addMessage(text, sender) {
     chatContainer.scrollTop = chatContainer.scrollHeight;
 }
 
-function generateAIResponse(question) {
-    // Check for developer question
-    if (question.toLowerCase().includes('developer') || 
-        question.toLowerCase().includes('who made this') ||
-        question.toLowerCase().includes('who created this')) {
-        return "This website was developed by Damilare Oyinloye to help people study the Bible and grow in their faith.";
+async function generateAIResponse(question) {
+    // Developer identification (keeps your credit)
+    if (question.toLowerCase().includes('developer')) {
+        return "This website was developed by Damilare Oyinloye to help people study the Bible.";
     }
+
+    // Connect to OpenAI
+    const response = await fetch("https://api.openai.com/v1/chat/completions", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer YOUR_OPENAI_KEY`
+        },
+        body: JSON.stringify({
+            model: "gpt-3.5-turbo",
+            messages: [{
+                role: "system",
+                content: "You are a knowledgeable Christian AI assistant. Provide concise, biblical answers. Always cite scripture when possible."
+            }, {
+                role: "user",
+                content: question
+            }]
+        })
+    });
+
+    const data = await response.json();
+    return data.choices[0].message.content;
+}
     
     // Sample responses for common questions
     const lowerQuestion = question.toLowerCase();
