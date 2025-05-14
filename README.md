@@ -1,1 +1,1 @@
-# Bible-ai-website
+# bible-ai-website
