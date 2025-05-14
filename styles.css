@@ -34,3 +34,16 @@ body {
 footer {
     margin-top: 50px;
 }
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+    }
+    #chatContainer {
+        height: 200px;
+    }
+    .card {
+        margin-bottom: 20px;
+    }
+}
